@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 布局 - 水平 & 垂直对齐</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>1 元素居中对齐</h3>
+  <div class="center1">div 元素是居中的</div>
+
+  <h3>2 图片居中对齐</h3>
+  <img src="./a.jpg">
+
+  <h3>3 垂直居中对齐 - 使用 padding</h3>
+  <p>多行文本时：文本仍然处于容器垂直居中的位置，但是容器的 height 会随着文本行数的增加而增大</p>
+  <div class="center2">div垂直居中对齐</div>
+
+  <h3>4 垂直居中 - 使用 line-height</h3>
+  <p>line-height=height：容器的 height 不变，line-height 是文本的行间距，文本会溢出容器显示；
+    多行文本可使用 vertical-align: middle; 来实现元素的垂直居中，
+    但是如果子元素的内容体积大于父元素的内容体积时，仍然会溢出，后面需要使用文字溢出处理来解决</p>
+  <div class="center3">div垂直居中对齐 line-height</div>
+
+  <h3>5 垂直居中 - 使用 position 和 transform</h3>
+  <div class="center4"><p>div垂直居中对齐 使用 position 和 transform</p></div>
+
+  <h3>6 垂直居中 - 使用 Flex</h3>
+  <div class="center5">
+    <p>Flex</p>
+  </div>
+
+  <h3>7 垂直居中 - padding 多行文本，容器的高度会不断增大</h3>
+  <div class="center2">
+    多行文本padding设置v垂直居中对齐失效 <br>
+    多行文本padding设置v垂直居中对齐失效 <br>
+  </div>
+
+  <h3>8 垂直居中 - 使用 line-height 失效</h3>
+  <div class="center3">
+    多行文本line-height设置v垂直居中对齐失效 <br>
+    多行文本line-height设置v垂直居中对齐失效 <br>
+  </div>
+
+  
+
+</body>
+</html>

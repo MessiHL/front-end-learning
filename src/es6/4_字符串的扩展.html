@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串的扩展</title>
+  <h3>字符串的扩展</h3>
+  <p>1- for of</p>
+  <p>2- 模板字符串 `${x}`</p>
+  <h3>JavaScript 规定有5个字符，不能在字符串里面直接使用，只能使用转义形式</h3>
+  <p>U+005C：反斜杠（reverse solidus)</p>
+  <p>U+000D：回车（carriage return）</p>
+  <p>U+2028：行分隔符（line separator）</p>
+  <p>U+2029：段分隔符（paragraph separator）</p>
+  <p>U+000A：换行符（line feed）</p>
+</head>
+<body>
+  <script>
+    // for of
+    for(let x of 'abc'){
+      console.log(x);
+    }
+  </script>
+</body>
+</html>

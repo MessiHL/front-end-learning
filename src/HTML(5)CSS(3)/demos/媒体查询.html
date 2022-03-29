@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body,div-media{
+      padding: 0;
+      margin: 0;
+      height: 100%;
+      width: 100%;
+      font-size: 48px;
+    }
+    @media only screen and (min-width:1200px){
+      body{
+        background: #337ecc;
+        color: #fff;
+        
+      }
+    }
+
+    @media only screen and (min-width:960px) and (max-width:1199px){
+      body{
+        background: #95d475;
+        color: #fff;
+      }
+    }
+
+    @media only screen and (min-width:768px) and (max-width:959px){
+      body{
+        background:  #fff;
+        color: #000;
+      }
+    }
+
+    @media only screen and (min-width:480px) and (max-width:767px){
+      body{
+        background: #f16363;
+        color: #fff;
+      }
+    }
+
+    @media only screen and (max-width: 479px) {
+      body{
+        background: #d31eac;
+        color: #fff;
+      }
+    }
+  </style>
+</head>
+<body>
+  <p>@media only screen and (max-width: XXXpx) </p>
+
+  <p>[and] 关键字之后一定要有空格</p>
+</body>
+</html>

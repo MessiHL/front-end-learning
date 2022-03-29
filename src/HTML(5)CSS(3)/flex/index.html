@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flex</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="website">
+    <a target="_bland" href="https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html">Flex 布局教程：语法篇</a>
+  </div>
+  <h2>1 flex-direction属性决定主轴的方向（即项目的排列方向）: row | row-reverse | column | column-reverse</h2>
+  <div>
+    <h3>row（默认值）：主轴为水平方向，起点在左端</h3>
+    <div class="box box-direction-row">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>row-reverse：主轴为水平方向，起点在右端</h3>
+    <div class="box box-direction-row-reverse">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>column：主轴为垂直方向，起点在上沿</h3>
+    <div class="box box-direction-column">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>column-reverse：主轴为垂直方向，起点在下沿</h3>
+    <div class="box box-direction-column-reverse">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+  </div>
+  <h2>2 flex-wrap: 定义如果一条轴线排不下，如何换行(nowrap | wrap | wrap-reverse)</h2>
+  <div>
+    <h3>nowrap</h3>
+    <div class="box">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+      <div class="item">15</div>
+      <div class="item">16</div>
+      <div class="item">17</div>
+      <div class="item">18</div>
+      <div class="item">19</div>
+      <div class="item">20</div>
+    </div>
+    <h3>wrap: 换行，第一行在上方</h3>
+    <div class="box box-flex-wrap-wrap">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+      <div class="item">15</div>
+      <div class="item">16</div>
+      <div class="item">17</div>
+      <div class="item">18</div>
+      <div class="item">19</div>
+      <div class="item">20</div>
+    </div>
+    <h3>reverse:换行，第一行在下方</h3>
+    <div class="box box-flex-wrap-reverse">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+      <div class="item">4</div>
+      <div class="item">5</div>
+      <div class="item">6</div>
+      <div class="item">7</div>
+      <div class="item">8</div>
+      <div class="item">9</div>
+      <div class="item">10</div>
+      <div class="item">11</div>
+      <div class="item">12</div>
+      <div class="item">13</div>
+      <div class="item">14</div>
+      <div class="item">15</div>
+      <div class="item">16</div>
+      <div class="item">17</div>
+      <div class="item">18</div>
+      <div class="item">19</div>
+      <div class="item">20</div>
+    </div>
+  </div>
+  <h2>3 flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap</h2>
+  <h2>4 justify-content属性定义了项目在主轴上的对齐方式(flex-start | flex-end | center | space-between | space-around)</h2>
+  <div>
+    <h3>flex-start（默认值）：左对齐</h3>
+    <div class="box box-justify-content-flex-start">
+      <div class="item">1</div>
+      <div class="item">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>flex-end 右对齐</h3>
+    <div class="box box-flex-justify-content-flex-end">
+      <div class="item">1</div>
+      <div class="item width200">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>center 居中</h3>
+    <div class="box box-flex-justify-content-center">
+      <div class="item">1</div>
+      <div class="item width200">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>space-between 两端对齐，项目之间的间隔都相等</h3>
+    <div class="box box-flex-justify-content-space-between">
+      <div class="item">1</div>
+      <div class="item width200">2</div>
+      <div class="item">3</div>
+    </div>
+    <h3>space-around 每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍</h3>
+    <div class="box box-justify-content-space-around">
+      <div class="item">1</div>
+      <div class="item width200">2</div>
+      <div class="item">3</div>
+    </div>
+  </div>
+  <h2>5 align-items 属性定义项目在交叉轴上如何对齐：</h2>
+  <h2>flex-start | flex-end | center | baseline | stretch</h2>
+  <div>
+    <h3>flex-start 交叉轴的起点对齐</h3>
+    <div class="box align-items-start">
+      <div class="item">1</div>
+      <div class="item height200">2</div>
+      <div class="item height160">3</div>
+    </div>
+    <h3>flex-end 交叉轴的终点对齐</h3>
+    <div class="box align-items-end">
+      <div class="item">1</div>
+      <div class="item height200">2</div>
+      <div class="item height160">3</div>
+    </div>
+    <h3>flex-center 交叉轴的中点对齐</h3>
+    <div class="box align-items-center">
+      <div class="item">1</div>
+      <div class="item height200">2</div>
+      <div class="item height160">3</div>
+    </div>
+    <h3>flex-baseline 项目的第一行文字的基线对齐</h3>
+    <div class="box align-items-baseline">
+      <div class="item">text</div>
+      <div class="item height200">text</div>
+      <div class="item height160" style="font-size: 48px;">text</div>
+    </div>
+    <h3>flex-stretch （默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度</h3>
+    <div class="box align-items-stretch">
+      <div class="item">1</div>
+      <div class="item height200">2</div>
+      <div class="item height160">3</div>
+    </div>
+
+  </div>
+  <h2>6 flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大
+    <div>
+      
+    </div>
+  </h2>
+
+</body>
+</html>

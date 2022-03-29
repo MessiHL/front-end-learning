@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>对象的扩展</title>
+  <!-- https://es6.ruanyifeng.com/#docs/object -->
+  <!-- 
+    简写的对象方法不能用作构造函数，会报错。
+    属性名表达式与简洁表示法，不能同时使用，会报错。
+   -->
+</head>
+<body>
+  <table border="1" cellpadding="1" cellspacing="0">
+    <thead>
+      <th>方法</th>
+      <th>说明</th>
+    </thead>
+    <tbody>
+     <tr>
+       <td>for...in</td>
+       <td>循环遍历对象自身的和继承的可枚举属性（不含 Symbol 属性）。</td>
+     </tr>
+     <tr>
+       <td>Object.keys(obj)</td>
+       <td>返回一个数组，包括对象自身的（不含继承的）所有可枚举属性（不含 Symbol 属性）的键名。</td>
+     </tr>
+     <tr>
+       <td>Object.getOwnPropertyNames(obj)</td>
+       <td>返回一个数组，包含对象自身的所有属性（不含 Symbol 属性，但是包括不可枚举属性）的键名。</td>
+     </tr>
+     <tr>
+       <td>Object.getOwnPropertySymbols(obj)</td>
+       <td>返回一个数组，包含对象自身的所有 Symbol 属性的键名。</td>
+     </tr>
+     <tr>
+       <td>Reflect.ownKeys(obj)</td>
+       <td>返回一个数组，包含对象自身的（不含继承的）所有键名，不管键名是 Symbol 或字符串，也不管是否可枚举。</td>
+     </tr>
+    </tbody>
+  </table>
+  <script>
+   // 属性的简洁表示法
+    function f(x,y){
+      return {x,y}
+    }
+    let d = f(1,2)
+    console.log(d); // {x: 1, y: 2}
+
+    let obj = {x:123,y:'a',z:'hi'}
+    console.log(Object.getOwnPropertyDescriptor(obj,'x'));
+
+    console.log('for ... in ');
+    for(o in obj){
+      console.log(o);
+    }
+
+    console.log(Object.keys(obj));
+
+    console.log(Object.getOwnPropertyNames(obj));
+    console.log(Object.getOwnPropertySymbols(obj));
+
+    console.log(Reflect.ownKeys(obj));
+
+    console.log('解构赋值：');
+    let {x,y,...z} = {x:1,y:2,a:4,b:6}
+    console.log(`x:${x};y:${y};z:${z}`,z);
+
+
+  </script>
+</body>
+</html>

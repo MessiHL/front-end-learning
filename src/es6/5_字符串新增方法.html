@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>字符串新增方法</title>
+</head>
+<body>
+  <h2>字符串新增方法</h2>
+  <h3>String 实例方法 String.xxx()</h3>
+  <table border="1" cellpadding="1" cellspacing="0">
+    <thead>
+      <th>方法</th>
+      <th>说明</th>
+    </thead>
+    <tbody>
+      <tr>
+        <td>fromCodePoint()</td>
+        <td>可以识别大于0xFFFF的字符，弥补了String.fromCharCode()方法的不足。在作用上，正好与下面的codePointAt()方法相反。</td>
+      </tr>
+      <tr>
+        <td>raw()</td>
+        <td>返回一个斜杠都被转义（即斜杠前面再加一个斜杠）的字符串，往往用于模板字符串的处理方法。</td>
+      </tr>
+      <tr>
+        <td>codePointAt()</td>
+        <td>能够正确处理 4 个字节储存的字符，返回一个字符的码点。</td>
+      </tr>
+      <tr>
+        <td>normalize()</td>
+        <td>将字符的不同表示方法统一为同样的形式，这称为 Unicode 正规化。</td>
+      </tr>
+      <tr>
+        <td>includes()</td>
+        <td>返回布尔值，表示是否找到了参数字符串。</td>
+      </tr>
+      <tr>
+        <td>startsWith()</td>
+        <td>返回布尔值，表示参数字符串是否在原字符串的头部。</td>
+      </tr>
+      <tr>
+        <td>endsWith()</td>
+        <td>返回布尔值，表示参数字符串是否在原字符串的尾部。</td>
+      </tr>
+      <tr>
+        <td>repeat()</td>
+        <td>返回一个新字符串，表示将原字符串重复n次。</td>
+      </tr>
+      <tr>
+        <td>padStart()</td>
+        <td>头部补全</td>
+      </tr>
+      <tr>
+        <td>padEnd()</td>
+        <td>尾部补全</td>
+      </tr>
+      <tr>
+        <td>trimStart()</td>
+        <td>消除字符串头部的空格，返回的是新字符串，不会修改原始字符串。</td>
+      </tr>
+      <tr>
+        <td>trimEnd()</td>
+        <td>消除尾部的空格，返回的是新字符串，不会修改原始字符串。</td>
+      </tr>
+      <tr>
+        <td>replaceAll()</td>
+        <td>替换所有的匹配</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+
+    console.log(String.fromCharCode(0x20BB7));
+
+    console.log('abc'.startsWith('a',2));
+
+    console.log('abc'.repeat(2.5)); // 小数会被取整
+
+    console.log('x'.padStart(5,'n'));
+    console.log('x'.padEnd(5,'n'));
+
+    console.log('xyz'.at(1),'xyz'.at(-1));
+
+  </script>
+</body>
+</html>

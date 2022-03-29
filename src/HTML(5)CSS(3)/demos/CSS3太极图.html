@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>太极图</title>
+  <style>
+    body{
+      background-color: #a0cfff;
+    }
+    .box{
+      position: relative;
+      width: 300px;
+      height: 150px;
+      margin: 20px;
+      border-radius: 150px 150px 0 0;
+      background-color: #000;
+    }
+
+    .box::before{
+      position: absolute;
+      content: '';
+      top: 75px;
+      width: 45px;
+      height: 45px;
+      border: 52.5px solid #fff;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    .box::after{
+      position: absolute;
+      content: '';
+      right: 0;
+      top: 75px;
+      width: 45px;
+      height: 45px;
+      border: 52.5px solid #000;
+      border-radius: 50%;
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <!-- 参考 https://blog.csdn.net/qq_38605121/article/details/85226167 -->
+  <div class="box"></div>
+</body>
+</html>
