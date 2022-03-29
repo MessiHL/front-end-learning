@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>五子棋</title>
+    <style type="text/css">
+      body {
+        text-align: center;
+      }
+      .chess-border {
+        display: inline-block;
+        padding: 32px;
+        margin: 0 auto;
+        background-color: #ffd883;
+      }
+      .chess-border-table {
+        border: 2px solid #4b4740;
+        border-collapse: collapse;
+      }
+      .chess-border-table tr td {
+        height: 24px;
+        width: 24px;
+        border: 1px solid #635d52;
+        position: relative;
+      }
+      /* 星位 样式 */
+      .chess-border-table tr td .xingwei {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-color: #4b4740;
+        border-radius: 20px;
+      }
+
+      /* 天元 样式 */
+      .chess-border-table tr td .tianyuan {
+        position: absolute;
+        bottom: -5px;
+        right: -5px;
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        background-color: #4b4740;
+        border-radius: 20px;
+      }
+
+      /*棋子样式 - 黑*/
+      .chess-pieces-black {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
+        background-color: #201f1c;
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+      }
+
+      /*棋子样式 - 白*/
+      .chess-pieces-white {
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        border-radius: 20px;
+        background-color: #f5f3ee;
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+      }
+
+      /*最后一次落下的棋子*/
+      .chess-pieces-active {
+        display: inline-block;
+        height: 10px;
+        width: 10px;
+        border-radius: 10px;
+        background-color: #201f1c;
+        position: absolute;
+        bottom: -10px;
+        right: -10px;
+        color: rgb(241, 55, 22);
+        font-size: 20px;
+        text-align: center;
+        line-height: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chess-border">
+      <table id="chessBorderTable" class="chess-border-table"></table>
+    </div>
+    <script>
+      var isBlack = true;
+      window.onload = function () {
+        var ele = document.getElementById("chessBorderTable");
+        // 绘制棋盘
+        drawTable(ele);
+        ele.onclick = function (ev) {
+          playGame(ev);
+        };
+      };
+
+      function drawTable(ele) {
+        var html = "",
+          td = "";
+        for (var i = 0; i < 18; i++) {
+          td = "";
+          for (var j = 0; j < 18; j++) {
+            if (
+              (j == 2 || j == 8 || j == 14) &&
+              (i == 2 || i == 8 || i == 14)
+            ) {
+              td += '<td><span class="xingwei"></span></td>';
+            } else {
+              td += "<td></td>";
+            }
+          }
+
+          html += "<tr>" + td + "</tr>";
+        }
+
+        ele.innerHTML = html;
+      }
+
+      function playGame(ev) {
+        if (
+          ev.target.innerHTML == undefined ||
+          ev.target.innerHTML == "" ||
+          ev.target.innerHTML != '<span class="xingwei"></span>' ||
+          ev.target.innerHTML != '<span class="tianyuan"></span>'
+        ) {
+          txt = isBlack
+            ? '<span class="chess-pieces-white"></span>'
+            : '<span class="chess-pieces-black"></span>';
+          ev.target.innerHTML = txt;
+          isBlack = !isBlack;
+        }
+      }
+    </script>
+  </body>
+</html>
