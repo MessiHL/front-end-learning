@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS3 几何图形</title>
+  <!-- 
+    参考: 
+    
+    https://segmentfault.com/a/1190000039200998
+   -->
+  <style>
+    body{
+      background-color: #282828;
+    }
+
+    .triangle{
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-width: 40px;
+      border-style: solid;
+      border-color:transparent
+    }
+
+    .triangle-up{
+      border-top-width: 0;
+      border-bottom-color: red;
+    }
+
+    .triangle-right{
+      border-right-width: 0;
+      border-left-color: red;
+    }
+
+    .triangle-down{
+      border-bottom-width: 0;
+      border-top-color: red;
+    }
+
+    .triangle-left{
+      border-left-width: 0;
+      border-right-color: red;
+    }
+  </style>
+</head>
+<body>
+  <div class="triangle triangle-up"></div>
+  <div class="triangle triangle-right"></div>
+  <div class="triangle triangle-down"></div>
+  <div class="triangle triangle-left"></div>
+</body>
+</html>
