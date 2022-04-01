@@ -433,3 +433,20 @@ arguments不会自动反映函数参数的变化
 不能使用fn.caller和fn.arguments获取函数调用的堆栈
 增加了保留字（比如protected、static和interface）
 ``` 
+
+## 14 module
+```javascript
+// 第一组
+export default function crc32() { // 输出
+  // ...
+}
+
+import crc32 from 'crc32'; // 输入
+
+// 第二组
+export function crc32() { // 输出
+  // ...
+};
+
+import {crc32} from 'crc32'; // 输入
+```
