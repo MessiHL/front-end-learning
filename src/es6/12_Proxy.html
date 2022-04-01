@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proxy</title>
+</head>
+<body>
+  <script>
+    var obj = new Proxy({},{
+      get:function(target,propkey,receiver){
+        console.log(`getting ${propkey}`);
+        return Reflect.get(target,propkey,receiver);
+      },
+      set:function(target,propkey,value,receiver){
+        console.log(`setting ${propkey}`);
+        return Reflect.set(target,propkey,value,receiver);
+      },
+    });
+
+    // obj.count = 1
+
+    // ++obj.count
+
+  </script>
+</body>
+</html>
