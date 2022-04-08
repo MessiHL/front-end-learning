@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Grid 布局</title>
+  <!-- 
+    参考: https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html
+   -->
+   <style>
+     .container{
+       display: grid;
+       margin: 20px 0;
+       
+     }
+     .container-normal{
+        grid-template-columns:repeat(3,100px);
+        grid-template-rows: repeat(3,100px);
+     }
+
+     .container-wrapper{
+       width: 600px;
+       height: 400px;
+       grid-template-columns: 30% 70%;
+     }
+
+     .container-fr12{
+        /* 如果项目的宽度被文字撑开了，此处设置的宽度无效 */
+        width: 1200px;
+        grid-template-columns: repeat(12, 1fr);
+     }
+     .container-fr24{
+        /* 如果项目的宽度被文字撑开了，此处设置的宽度无效 */
+        width: 1200px;
+        grid-template-columns: repeat(24, 1fr);
+     }
+      
+     .container-fr{
+      width: 600px;
+      /* 第一列的宽度为300像素，第二列的宽度(100)是第三列(200)的一半。 */
+      /* grid-template-columns: 300px 1fr 2fr; */
+
+      /* 宽度比 1:2:3 */
+      /* grid-template-columns:  1fr 2fr 3fr; */
+
+      /* 
+        auto：宽度自动赋值，
+        如果第一列设置了auto，项目的宽度依据内容的宽度来设置（没有内容，则项目宽度为0）
+      */
+      grid-template-columns: auto 1fr 2fr;
+     }
+
+
+     .item{
+       font-size: 2em;
+       text-align: center;
+       line-height: 100px;
+       color: #fff;
+       border: 1px solid #e5e4e9;
+     }
+    .item-1 {
+      background-color: #ef342a;
+    }
+
+    .item-2 {
+      background-color: #f68f26;
+    }
+
+    .item-3 {
+      background-color: #4ba946;
+    }
+
+    .item-4 {
+      background-color: #0376c2;
+    }
+
+    .item-5 {
+      background-color: #c077af;
+    }
+
+    .item-6 {
+      background-color: #f8d29d;
+    }
+
+    .item-7 {
+      background-color: #b5a87f;
+    }
+
+    .item-8 {
+      background-color: #d0e4a9;
+    }
+
+    .item-9 {
+      background-color: #1c4956;
+    }
+</style>
+</head>
+<body>
+  <div class="container container-normal">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
+  <div class="container container-fr">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+  </div>
+  <h4>传统左右布局：</h4>
+  <div class="container container-wrapper">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+  </div>
+  <h4>传统布局：12列</h4>
+  <div class="container container-fr12">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+    <div class="item item-1">10</div>
+    <div class="item item-2">11</div>
+    <div class="item item-3">12</div>
+  </div>
+  <h4>传统布局：24列</h4>
+  <div class="container container-fr24">
+    <div class="item item-1">1</div>
+    <div class="item item-2">2</div>
+    <div class="item item-3">3</div>
+    <div class="item item-4">4</div>
+    <div class="item item-5">5</div>
+    <div class="item item-6">6</div>
+    <div class="item item-7">7</div>
+    <div class="item item-8">8</div>
+    <div class="item item-9">9</div>
+    <div class="item item-1">10</div>
+    <div class="item item-2">11</div>
+    <div class="item item-3">12</div>
+    <div class="item item-1">13</div>
+    <div class="item item-2">14</div>
+    <div class="item item-3">15</div>
+    <div class="item item-4">16</div>
+    <div class="item item-5">17</div>
+    <div class="item item-6">18</div>
+    <div class="item item-7">19</div>
+    <div class="item item-8">20</div>
+    <div class="item item-9">21</div>
+    <div class="item item-1">22</div>
+    <div class="item item-2">23</div>
+    <div class="item item-3">24</div>
+  </div>
+</body>
+</html>

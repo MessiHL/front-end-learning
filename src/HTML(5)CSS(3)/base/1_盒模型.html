@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    box-sizing（https://developer.mozilla.org/zh-CN/docs/Web/CSS/box-sizing）：
+
+      content-box  是默认值。如果你设置一个元素的宽为100px，那么这个元素的内容区会有100px 宽，
+    并且任何边框和内边距的宽度都会被增加到最后绘制出来的元素宽度中。
+
+      border-box 告诉浏览器：你想要设置的边框和内边距的值是包含在width内的。
+    也就是说，如果你将一个元素的width设为100px，那么这100px会包含它的border和padding，
+    内容区的实际宽度是width减去(border + padding)的值。
+    大多数情况下，这使得我们更容易地设定一个元素的宽高。
+   -->
+  <style>
+    .base{
+      display: inline-block;
+      height: 200px;
+      width: 200px;
+      padding: 20px;
+      margin: 40px;
+      background-color: rgb(137, 241, 137);
+    }
+    .box{
+      box-sizing:border-box;
+    }
+  </style>
+</head>
+<body>
+  <h3>示例，右侧有border-box</h3>
+  <div id="div1" class="base">content-box</div>
+  <div id="div2" class="base box">border-box</div>
+  <h3>知识点</h3>
+  <pre style="font-size: 16px; line-height: 32px;">
+  dom.style.width/height
+    这种方式只能取到dom元素内联样式所设置的宽高，
+    也就是说如果该节点的样式是在style标签中或外联的CSS文件中设置的话，
+    通过这种方法是获取不到dom的宽高的。
+  dom.currentStyle.width/height
+    这种方式获取的是在页面渲染完成后的结果，
+    就是说不管是哪种方式设置的样式，都能获取到。
+    但这种方式只有IE浏览器支持。
+  window.getComputedStyle(dom).width/height
+    这种方式的原理和2是一样的，这个可以兼容更多的浏览器，通用性好一些。
+  dom.getBoundingClientRect().width/height
+    这种方式是根据元素在视窗中的绝对位置来获取宽高的
+  dom.offsetWidth/offsetHeight
+    这个就没什么好说的了，最常用的，也是兼容最好的。
+  </pre>
+  
+  <script>
+    var dom1 = document.getElementById("div1");
+    var dom2 = document.getElementById("div2");
+    console.log("div1:",div1.offsetWidth,div1.offsetHeight);
+    console.log("div2:",div2.offsetWidth,div2.offsetHeight);
+  </script>
+</body>
+</html>
