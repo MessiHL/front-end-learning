@@ -5,10 +5,62 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>fetch</title>
+  <style>
+    button{
+      margin: 10px;
+    }
+  </style>
 </head>
 <body>
+  <h2>在控制台中查看输出</h2>
+  <button onclick="fetchTest1()">fetch调用</button>
+  <button onclick="fetchTest2()">fetch调用：await写法</button>
+  <button onclick="fetchTest3()">fetch调用：状态码</button>
   <script>
-     fetch('./data.json').then(res=>res.json).then(data=>console.log(data))
+    
+
+    function fetchTest1(){
+      let url = 'https://api.github.com/users/MessiHL';
+      fetch(url)
+      .then(res=>res.json())
+      .then(json=>console.log(json))
+      .catch(err=>console.log(err))
+    }
+
+    /*
+      await语句必须放在try...catch里面，这样才能捕捉异步操作中可能发生的错误
+    */
+    async function fetchTest2(){
+      let url = 'https://api.github.com/users/MessiHL';
+      try{
+        let res = await fetch(url);
+        console.log('------------Response------------');
+        console.log(res);
+        console.log('----------Response.headers-------------');
+        for(let[key,value] of res.headers){
+          console.log(`${key}: ${value}`);
+        }
+        let d = await res.json();
+        console.log(d);
+
+      } catch (err){
+
+      }
+    }
+
+    async function fetchTest3(){
+      let url = '/readme.txt';
+      let res = await fetch(url);
+      // 不用考虑网址跳转（状态码为 3xx），因为fetch()会将跳转的状态码自动转为 200
+      // G:\coder\D项目实战\front-end\front-end-learning\src\Http\Fetch\readme.txt
+      if(res.status >=200 && res.status<300){
+        let d = await res.text()
+        console.log(d);
+      } else {
+        throw new Error(res.statusText)
+      }
+    }
+    
   </script>
 </body>
 </html>

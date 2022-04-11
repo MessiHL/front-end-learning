@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XMLHttpRequest</title>
+  <style>
+    button{
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>在控制台中查看输出</h2>
+  <p>https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest</p>
+  <p>https://wangdoc.com/javascript/bom/xmlhttprequest.html</p>
+  <button onclick="test()">XMLHttpRequest示例</button>
+  <script>
+    function test(){
+      let xhr = new XMLHttpRequest();
+      // 通信过程中，每当实例对象发生状态变化，它的readyState属性的值就会改变。
+      // 这个值每一次变化，都会触发readyStateChange事件。
+      xhr.onreadystatechange = function(){
+        switch(xhr.readyState){
+          case 0:
+            console.log(`${xhr.readyState}:表示 XMLHttpRequest 实例已经生成，但是实例的open()方法还没有被调用`);
+            console.log(`xhr.responseText: ${xhr.responseText}`);
+            break;
+          case 1:
+            console.log(`${xhr.readyState}:表示open()方法已经调用，但是实例的send()方法还没有调用，仍然可以使用实例的setRequestHeader()方法，设定 HTTP 请求的头信息`);
+            console.log(`xhr.responseText: ${xhr.responseText}`);
+            break;
+          case 2:
+            console.log(`${xhr.readyState}:表示实例的send()方法已经调用，并且服务器返回的头信息和状态码已经收到`);
+            console.log(`xhr.responseText: ${xhr.responseText}`);
+            break;
+          case 3:
+            console.log(`${xhr.readyState}:表示正在接收服务器传来的数据体（body 部分）。这时，如果实例的responseType属性等于text或者空字符串，responseText属性就会包含已经收到的部分信息。`);
+            console.log(`xhr.responseText: ${xhr.responseText}`);
+            break;
+          case 4:
+            console.log(`${xhr.readyState}:表示服务器返回的数据已经完全接收，或者本次接收已经失败。`);
+            console.log(`xhr.responseText: ${xhr.responseText}`);
+            console.log(`xhr.responseType: ${xhr.responseType}`);
+            console.log('---------------------------- XMLHttpRequest ----------------------------');
+            console.log(xhr);
+            break;
+        }
+      };
+
+      xhr.onerror = function(e){
+        console.log(`onerror xhr.statusText:${xhr.statusText}`);
+      }
+
+      let url = 'https://api.github.com/users/MessiHL';
+      xhr.open('GET',url,true);
+      xhr.send(null);
+    }
+
+  </script>
+</body>
+</html>
