@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件上传</title>
+</head>
+<body>
+  <div>
+    上传文件 ： <input type="file" name = "file" id = "fileId" /> 
+    <button onclick="loadFile()">上传</button>
+</div>
+<script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+<script>
+function loadFile() {
+  
+  //js写法        
+  var file=document.getElementById('fileId').files[0]//获取文件流
+  var fileName =  file.name;//获取文件名
+  //jq写法
+  var file = $('#fileId')[0].files[0];
+
+  let formData = new FormData()
+	formData.append("file", file, "demo")
+	xhr = new XMLHttpRequest()
+	xhr.open("post", url,true)
+	xhr.onload = uploadComplete //请求完成
+	xhr.onerror =  uploadFailed //请求失败
+	// xhr.upload.onprogress = progressFunction
+	xhr.send(formData)
+
+}
+
+
+
+function uploadComplete() {
+	console.log("上传成功")
+}
+
+function uploadFailed() {
+	console.log("上传失败")
+}
+
+</script>
+</body>
+</html>

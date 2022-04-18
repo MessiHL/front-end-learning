@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button onclick="saveFile()">文件下载</button>
+  <br><br>
+  <a href="https://disc.szse.cn/download/disc/disk03/finalpage/2022-04-12/f14b0943-222c-4a7b-9d91-162016895a13.PDF" download="文件A">文件下载</a>
+  <script>
+    function handleFile(){
+      var filePath = 'https://disc.szse.cn/download/disc/disk03/finalpage/2022-04-12/f14b0943-222c-4a7b-9d91-162016895a13.PDF';
+      var link = document.createElement('a');
+      link.click(); 
+    }
+
+    // 处理响应内容代码
+    function processRequest(xhr){
+      var xhr = new XMLHttpRequest();
+      if(xhr.status == 200){
+        var response = xhr.response;  
+        var contentType = xhr.getResponseHeader("Content-Type");
+        var fileName =  xhr.getResponseHeader("content-disposition").split("UTF-8''")[1];
+        saveFile(response, decodeURI(fileName))
+      }
+    }
+
+    function saveFile(blob, fileName){
+      var link = document.createElement('a');
+      var file = new Blob([blob], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+
+      var filePath = 'https://disc.szse.cn/download/disc/disk03/finalpage/2022-04-12/f14b0943-222c-4a7b-9d91-162016895a13.PDF';
+      link.href = filePath;
+      link.download="文件A";
+      // link.download = fileName;
+      link.click(); 
+    }
+  </script>
+</body>
+</html>
