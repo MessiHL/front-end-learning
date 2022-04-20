@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>this</title>
+  <!-- 
+    参考 https://segmentfault.com/a/1190000011194676
+    要点：
+      1 this指向什么，完全取决于 什么地方以什么方式调用，而不是 创建时
+      2 this 的4中绑定方式(优先级：new 绑定 > 显示绑定 > 隐式绑定 > 默认绑定)
+      3 new 操作：
+        1 创建一个新对象。
+        2 把这个新对象的__proto__属性指向 原函数的prototype属性。(即继承原函数的原型)
+        3 将这个新对象绑定到 此函数的this上 。
+        4 返回新对象，如果这个函数没有返回其他对象。
+
+    总结:
+      1- 如果函数被new 修饰
+      2- 如果函数是使用call,apply,bind来调用的:this绑定的是 call,apply,bind 的第一个参数.例: foo.call(obj); 
+      3- 如果函数是在某个 上下文对象 下被调用:this绑定的是那个上下文对象
+      4- 如果都不是，即使用默认绑定
+   -->
+</head>
+<body>
+  <script>
+    var people = {
+      name:'托尼',
+      getName:function(){
+        console.log(this,this.name);
+      }
+    }
+
+    var p1 = people.getName;
+    p1();
+    
+    console.log('------------------ 1 默认绑定 ------------------');
+    /*默认绑定*/
+    function foo(){
+      var a = 1;
+      console.log(this.a,this);
+    }
+    var a = 10;
+    foo();
+
+    console.log('------------------ 2 隐性绑定 ------------------');
+    function bar(){
+      console.log(this.b,this);
+    }
+    var obj = {
+      b:10,
+      bar:bar
+    }
+    bar(); // undefined
+    obj.bar(); // 10 
+
+    console.log('------------------ 3 显性绑定 ------------------');
+    function test(){
+      console.log(this.x);
+    }
+    var t1 = {x:12};
+    var t2 = {x:99}
+    // call 是 test 上的一个函数,在改变this指向的同时执行这个函数
+    test.call(t1); // 这里将 this指向了 t1
+    test.apply(t2); // 这里将 this指向了 t2
+
+    console.log('------------------ 4 new ------------------');
+
+    function demo(){
+      this.z = 'z';
+      console.log(z,this);
+    }
+    demo();
+    var _demo = new demo();
+    console.log(_demo.z);
+
+  </script>
+</body>
+</html>
