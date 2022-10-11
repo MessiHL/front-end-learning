@@ -1,0 +1,28 @@
+<!--
+ * @Description: 
+ * @Autor: hl
+ * @Date: 2022-10-11 09:12:32
+ * @LastEditors: hl
+ * @LastEditTime: 2022-10-11 10:39:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>seajs - cmd demo</title>
+</head>
+<body>
+    <h1>es6 demo,see in console log</h1>
+    <!-- 浏览器加载 ES6 模块，也使用 <script> 标签，但是要加入 type="module" 属性。 -->
+    <!-- 
+        值得注意的，在 Chrome 中，如果直接打开，会报跨域错误，必须开启服务器，保证文件同源才可以有效果。你可以： 
+        全局安装http-server：
+            cnpm install http-server -g
+        在index.html 所在目录执行 
+            http-server
+    -->
+    <script src="./libs//main.js" type="module"></script>
+</body>
+</html>
