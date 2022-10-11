@@ -3,11 +3,13 @@
  * @Autor: hl
  * @Date: 2022-10-11 09:11:32
  * @LastEditors: hl
- * @LastEditTime: 2022-10-11 10:28:54
+ * @LastEditTime: 2022-10-11 10:43:01
 -->
 # 重点介绍以下四种模块加载规范：
 
-## 前置：require
+## 参考：
+
+[https://github.com/mqyqingfeng/Blog/issues/108?spm=a21iq3.home.0.0.1fdc2764EYHufz](https://github.com/mqyqingfeng/Blog/issues/108?spm=a21iq3.home.0.0.1fdc2764EYHufz)
 
 
 ## AMD
