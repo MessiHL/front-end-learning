@@ -3,9 +3,9 @@
  * @Autor: hl
  * @Date: 2022-10-11 09:11:32
  * @LastEditors: hl
- * @LastEditTime: 2022-10-11 10:43:01
+ * @LastEditTime: 2022-10-11 11:05:34
 -->
-# 重点介绍以下四种模块加载规范：
+# 重点介绍 AMD CMD CommonJS ES6 加载规范：
 
 ## 参考：
 
