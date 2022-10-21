@@ -11,7 +11,9 @@
     // 顶层对象的属性
     // 顶层对象的属性与全局变量挂钩，被认为是 JavaScript 语言最大的设计败笔之一
     a = 3
-    console.log(window.a);
+    var b = 4
+    console.log(window.a,window.b,window.c); // 3 4 undefined
+    c = 5
   </script>
 </body>
 </html>

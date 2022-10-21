@@ -39,14 +39,14 @@
 // }
 
 // 案例4：es6 中新增的块级作用域
-function f(){
-  let n = 1;
-  if(true){
-    let n = 2
-  }
-  console.log(n); // 输出1。 外层n 不受代码块(if(true))中的代码影响
-}
-f();
+// function f(){
+//   let n = 1;
+//   if(true){
+//     let n = 2
+//   }
+//   console.log(n); // 输出1。 外层n 不受代码块(if(true))中的代码影响
+// }
+// f();
 
 // ES5中没有块级作用域，以下代码 var n=2 会覆盖外层的 n = 1 
 function f2(){
