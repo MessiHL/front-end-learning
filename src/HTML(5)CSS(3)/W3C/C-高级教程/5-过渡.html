@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过渡</title>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 200px auto;
+            background-color: darkblue;
+            color:#fff;
+            text-align: center;
+            /*过渡属性及时间*/
+            transition: width 2s,height 2s,border-radius 2s,background-color 2s,transform 2s;
+            /*
+                属性规定过渡效果的速度曲线。
+                    ease - 规定过渡效果，先缓慢地开始，然后加速，然后缓慢地结束（默认）
+                    linear - 规定从开始到结束具有相同速度的过渡效果
+                    ease-in -规定缓慢开始的过渡效果
+                    ease-out - 规定缓慢结束的过渡效果
+                    ease-in-out - 规定开始和结束较慢的过渡效果
+                    cubic-bezier(n,n,n,n) - 允许您在三次贝塞尔函数中定义自己的值
+            */
+            transition-timing-function:ease-in;
+            /*过渡启动延时(2秒)*/
+            transition-delay: 2s;
+
+            /*
+                transition、transition-timing-function、transition-delay 简写
+                transition: width 2s linear 1s;
+            */
+        }
+
+        .demo1:hover{
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: darkgreen;
+            transform: rotate(360deg);
+        }
+
+
+        
+    </style>
+</head>
+<body>
+    <div class="demo1">A</div>
+</body>
+</html>

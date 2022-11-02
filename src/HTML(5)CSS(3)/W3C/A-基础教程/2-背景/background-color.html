@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>background-color</title>
+    <style>
+        .demo1,.demo2{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .demo1>div,.demo2>div{
+            height: 100px;
+            width: 25%;
+            background-color: green;
+            /*以下三行代码 实现垂直居中*/
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .demo1 div:nth-of-type(1){
+            opacity: 1;
+        }
+        .demo1 div:nth-of-type(2){
+            opacity: 0.75;
+        }
+
+        .demo1 div:nth-of-type(3){
+            opacity: 0.5;
+        }
+        .demo1 div:nth-of-type(4){
+            opacity: 0.25;
+        }
+
+        .demo2 div:nth-of-type(1){
+            background: rgba(0,128,0,1);
+        }
+        .demo2 div:nth-of-type(2){
+            background: rgba(0,128,0,0.75);
+        }
+        .demo2 div:nth-of-type(3){
+            background: rgba(0,128,0,0.5);
+        }
+        .demo2 div:nth-of-type(4){
+            background: rgba(0,128,0,0.25);
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <p>opacity 属性指定元素的不透明度/透明度。取值范围为 0.0 - 1.0。值越低，越透明： </p>
+    <div class="demo1">
+        <div> opacity: 1</div>
+        <div> opacity: 0.75</div>
+        <div> opacity: 0.5</div>
+        <div> opacity: 0.25</div>
+    </div>
+    <p>使用 opacity 属性为元素的背景添加透明度时，其所有子元素都继承相同的透明度。这可能会使完全透明的元素内的文本难以阅读。为此，可以使用RGBA：</p>
+    <div class="demo2">
+        <div> rgba(0,128,0,1)</div>
+        <div> rgba(0,128,0,0.75)</div>
+        <div> rgba(0,128,0,0.5)</div>
+        <div> rgba(0,128,0,0.25)</div>
+    </div>
+    <p>使用RGBA,子元素颜色不受影响</p>
+</body>
+</html>

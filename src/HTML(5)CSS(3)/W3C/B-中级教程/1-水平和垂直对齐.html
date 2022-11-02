@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS 布局 - 水平和垂直对齐</title>
+    <style>
+      h2 {
+        text-align: center;
+        height: 100px;
+        line-height: 100px;
+      }
+      h3 {
+        border-top: 4px dotted #4a4a4a;
+        padding-top: 20px;
+      }
+      .demo1 {
+        width: 80%;
+        border: 3px solid green;
+        margin: auto; /*元素居中*/
+      }
+
+      img {
+        display: block;
+        margin: auto;
+      }
+
+      .demo3 {
+        width: 200px;
+        border: 3px solid green;
+        position: absolute;
+        right: 0;
+      }
+      .demo4 {
+        width: 300px;
+        padding: 10px;
+        border: 3px solid green;
+        float: right;
+      }
+      .demo5 {
+        width: 300px;
+        padding: 10px;
+        border: 3px solid green;
+        float: left;
+      }
+      .demo6 {
+        border: 3px solid green;
+        padding: 10px;
+        overflow: auto;
+      }
+
+      .img2 {
+        float: right;
+      }
+
+      .demo7 {
+        border: 3px solid green;
+        padding: 50px 0;
+      }
+      .demo8 {
+        border: 3px solid green;
+        padding: 50px 0;
+        text-align: center;
+      }
+      .demo9{
+        border: 3px solid green;
+        height: 100px;
+        line-height: 100px;
+      }
+      .demo10{
+        border: 3px solid green;
+        height: 100px;
+        position: relative;
+      }
+      .demo10 p{
+          margin: 0;
+          position: absolute;
+          /* top: 50%;
+          left: 50%;
+          transform: translate(-50%,-50%);  */
+
+          bottom: 50%;
+          right: 50%;
+          transform: translate(50%,50%);
+      }
+    </style>
+  </head>
+  <body>
+    <h2>CSS 布局 - 水平和垂直对齐</h2>
+    <h3>1- 居中对齐元素</h3>
+    <p>注意：如果未设置 width 属性（或将其设置为 100％），则居中对齐无效。</p>
+    <div class="demo1">这个 div 元素是居中的。</div>
+
+
+    <h3>2- 居中对齐图像</h3>
+    <p>display: block; margin: auto;</p>
+    <img class="demo2" src="./../images/w3logo-3.png" alt="" />
+
+
+    <h3>3- 左和右对齐 - 使用 position</h3>
+    <div class="demo3">这个 div 是右对齐的。</div>
+
+    <h3 style="clear: both">4- 左和右对齐 - 使用 float</h3>
+    <p>对齐元素的另一种方法是使用 float 属性：</p>
+    <div class="demo4">float: right;</div>
+    <div class="demo5">float: left;</div>
+
+
+    <h3 style="clear: both">5- Clearfix</h3>
+    <p>
+      如果一个元素比包含它的元素高，并且它是浮动的，它将溢出其容器。您可以使用
+      clearfix hack 来解决此问题
+    </p>
+    <div class="demo6">
+      <img
+        class="img2"
+        src="./../../images/w3logo-3.png"
+        alt="W3School"
+        width="180"
+        height="167"
+      />
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
+      imperdiet, nulla et dictum interdum...
+    </div>
+
+
+    <h3>6- 垂直对齐 - 使用 padding</h3>
+    <p>
+      有很多方法可以在 CSS 中垂直对齐元素。一个简单的解决方案是使用上下内边距:
+    </p>
+    <div class="demo7">我是垂直居中的。</div>
+    <br />
+    <div class="demo8">我是水平和垂直居中的。</div>
+
+
+    <h3>7- 垂直对齐 - 使用 line-height（注意：多行文本会溢出）</h3>
+    <p>另一个技巧是使用其值等于 height 属性值的 line-height 属性：</p>
+    <div class="demo9">line-height = height。</div>
+    <br>
+
+
+    <h3>8- 垂直对齐 - 使用 position 和 transform（注意：多行文本不会溢出）</h3>
+    <p>transform: translate(-50%,-50%): 往上（x轴）,左（y轴）移动自身长宽的 50%，以使其居于中心位置</p>
+
+    <div class="demo10"><p>我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；我是水平和垂直居中的；</p></div>
+  </body>
+</html>

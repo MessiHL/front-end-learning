@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <!-- 
+        在 gallery1.html 的基础上添加样式
+     -->
+     <link rel="stylesheet" href="./styles/layout.css">
+     
+  </head>
+  <body>
+    <h1>Snapshots</h1>
+    <ul>
+      <li>
+        <a
+          href="images/b.jpg"
+          title="title1"
+          onclick="showPic(this);return false;"
+          >img1</a>
+      </li>
+      <li>
+        <a
+          href="images/c.jpg"
+          title="title2"
+          onclick="showPic(this); return false;"
+          >img2</a>
+      </li>
+      <li>
+        <a
+          href="images/d.jpg"
+          title="title3"
+          onclick="showPic(this); return false;"
+          >img3</a>
+      </li>
+    </ul>
+    <img id="placeholder" src="images/a.gif" alt="my image gallery" />
+    <p id="description"> Choose an image.</p>
+    <script>
+
+      window.onload =  countBodyNodes();
+
+      // childNodes 测试
+      function countBodyNodes(){
+        var nodes = document.getElementsByTagName("body")[0].childNodes;
+        // console.log(nodes);
+      }
+
+      
+      function showPic(whichPic) {
+        var source = whichPic.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src", source);
+
+        
+        var txt = whichPic.getAttribute("title");
+        var desc = document.getElementById("description");
+        // 方法一：
+        // 注意，此处是desc.childNodes[0].nodeValue
+        // desc.childNodes[0].nodeValue = txt;
+
+        // 方法二：
+        // 也可以使用一下语句设置nodeValue:
+        desc.firstChild.nodeValue = txt;
+
+        // desc.nodeValue = null . 因为 P 元素本身的 nodeValue 属性是一个空值，而我们这里想要得到的是<p> 元素所包含的文本的值；
+        // 包含在<p>元素中的文本是另一种节点，他是<p>元素的第一个子节点，因此我们要的其实是<p>元素的第一个子节点的nodeValue值。
+        console.log(desc.nodeValue,desc.childNodes[0].nodeValue);
+      }
+    </script>
+  </body>
+</html>

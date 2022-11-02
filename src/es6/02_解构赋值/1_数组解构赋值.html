@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组解构赋值</title>
+    <!-- 
+        1 从数组中提取值，按照对应位置，对变量赋值
+
+     -->
+</head>
+<body>
+    <h2>数组解构赋值</h2>
+</body>
+<script>
+    // 1 从数组中提取值，按照对应位置，对变量赋值
+    let[a,b,c] = [1,2,3];
+    console.log(`a:${a}; b:${b}; c:${c};`);
+
+    // 2 模式匹配
+    let[head,...tail] = [1,2,3,4];
+    console.log(head);
+    console.log(tail);
+
+    let [x,y,...z] = ['a'];
+    console.log(x);
+    console.log(y); // undefiend
+    console.log(z); // []
+
+    // 不完全解构
+    let[e,f,g] = ['1',2]
+    console.log(`e:${e}; f:${f}; g:${g};`);
+</script>
+</html> 

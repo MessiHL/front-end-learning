@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>border</title>
+    <style>
+        p.dotted {border-style: dotted;}
+        p.dashed {border-style: dashed;}
+        p.solid {border-style: solid;}
+        p.double {border-style: double;}
+        p.groove {border-style: groove;}
+        p.ridge {border-style: ridge;}
+        p.inset {border-style: inset;}
+        p.outset {border-style: outset;}
+        p.none {border-style: none;}
+        p.hidden {border-style: hidden;}
+        p.mix {border-style: dotted dashed solid double;}
+
+        .demo1{
+            height: 100px;
+            border-top:10px dotted rgb(54, 218, 218);
+            border-right:6px dashed rgb(75, 7, 17);
+            border-bottom: 20px double #c2346d;
+            border-left: 26px ridge #999;
+        }
+
+        .transparent{
+            background-color: yellowgreen;
+        }
+
+        span{
+            display: inline-block;
+            margin: 10px;
+            border: 100px solid #000;
+        }
+        .demo3{
+            border-color: transparent transparent transparent #000;
+        }
+        .demo4{
+            border-color: #000 transparent transparent transparent;
+        }
+        .demo5{
+            border-color: transparent #000 transparent transparent;
+        }
+        .demo6{
+            border-color: transparent transparent #000 transparent ;
+        }
+    </style>
+</head>
+<body>
+    <h3>边框</h3>
+    <p class="dotted">dotted</p>
+    <p class="dashed">dashed</p>
+    <p class="solid">solid</p>
+    <p class="double">double</p>
+    <p class="groove">groove</p>
+    <p class="ridge">ridge</p>
+    <p class="inset">inset</p>
+    <p class="outset">outset</p>
+    <p class="none">none</p>
+    <p class="mix">mix</p>
+    <h3>各边样式</h3>
+    <p class="demo1">边框宽度</p>
+    <h3>border transparent</h3>
+    <div class="transparent">
+        <span class="demo3"></span>
+        <span class="demo4"></span>
+        <span class="demo5"></span>
+        <span class="demo6"></span>
+    </div>
+    
+</body>
+</html>

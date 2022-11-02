@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <!-- 
+        在 gallery2.html 的基础上 平稳退化
+     -->
+     <link rel="stylesheet" href="layout.css">
+     
+  </head>
+  <body>
+    <h1>Snapshots</h1>
+    <ul id="imagegallery">
+      <li>
+        <a
+          href="./../images/b.jpg"
+          title="title1"
+          > img1</a>
+      </li>
+      <li>
+        <a
+          href="./../images/c.jpg"
+          title="title2"
+          >img2</a>
+      </li>
+      <li>
+        <a
+          href="./../images/d.jpg"
+          title="title3"
+          >img3</a>
+      </li>
+    </ul>
+    <img id="placeholder" src="./../images/a.gif" alt="my image gallery" />
+    <p id="description"> Choose an image.</p>
+    <script src="gallery.js"></script>
+  </body>
+</html>

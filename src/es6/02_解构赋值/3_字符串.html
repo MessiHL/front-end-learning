@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>string</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const[a,b,c,d,e] = "Hello";
+    console.log(`a:${a};b:${b};c:${c};d:${d};e:${e}`);
+    // 类似数组的对象都有一个length属性，因此还可以对这个属性解构赋值。
+    let{length: len} = 'hello';
+    console.log(len);
+</script>
+</html>

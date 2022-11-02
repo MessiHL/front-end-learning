@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象解构赋值</title>
+    <!-- 
+
+     -->
+</head>
+<body>
+    <h2>对象解构赋值</h2>
+</body>
+<script>
+    // 对象的属性没有次序，变量必须与属性同名，才能取到正确的值
+    let {bar,foo} = {foo:'a',bar:{name:'b'},baz:'c'}
+    console.log(bar,typeof bar);
+    console.log(foo,typeof foo);
+
+    // 对象的解构赋值，可以很方便地将现有对象的方法，赋值到某个变量
+    let {log,sin,cos} = Math
+    console.log(log);
+    console.log(sin);
+    console.log(cos);
+   
+</script>
+</html> 

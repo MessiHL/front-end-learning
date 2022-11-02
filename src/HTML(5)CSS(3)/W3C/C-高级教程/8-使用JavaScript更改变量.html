@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>变量</title>
+    <style>
+        :root{
+            --blue:#1e90ff;
+            --white:#fff;
+        }
+
+        body{
+            background-color: var(--blue);
+        }
+        h2{
+            border-bottom: 2px solid var(--blue);
+        }
+        .container{
+            background-color: var(--white);
+            padding: 15px;
+        }
+
+        button{
+            border:1px solid var(--blue);
+            background-color: var(--white);
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>使用 var() 函数</h1>
+    
+    <div class="container">
+      <h2>Welcome to Shanghai!</h2>
+      <p>Shanghai is one of the four direct-administered municipalities of the People's Republic of China.</p>
+      <p>Shanghai is one of the four direct-administered municipalities of the People's Republic of China.</p>
+      <p>
+        <button>Yes</button>
+        <button>No</button>
+      </p>
+    </div>
+    <button type="button" onclick="getVar()">使用 JavaScript 来获取 CSS 变量</button>
+    <button type="button" onclick="setVar()">使用 JavaScript 来更改 CSS 变量</button>
+    <script>
+        var r = document.querySelector(':root');
+        function getVar(){
+            var rs = getComputedStyle(r);
+            console.log("The value of --blue is: " + rs.getPropertyValue('--blue'));
+        }
+
+        function setVar(){
+            r.style.setProperty('--blue', 'lightblue');
+        }
+    </script>
+    </body>
+</html>

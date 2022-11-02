@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rgb(red, green, blue)rgb(red, green, blue)</title>
+    <style>
+        .back-color{
+            font-size: 32px;
+            color: #fff;
+            width: 80%;
+            height: 160px;
+            line-height: 160px;
+            text-align: center;
+            background-color: rgb(20, 100, 200);
+            margin: 30px auto;
+        }
+        .handle-color{
+            width: 80%;
+            display: flex;
+            margin:  auto;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id ="back-color" class="back-color">rgba(20, 100, 200,0.5)</div>
+    <div class="handle-color">
+        <div class="red">
+            <p>red</p>
+            <input id="slideRed" type="range" min="0" max="255" value="20"  oninput="changeRGB()"  onchange="changeRGB">
+            <div id="valRed">20</div>
+        </div>
+        <div class="green">
+            <p>green</p>
+            <input id="slideGreen" type="range" min="0" max="255" value="100"  oninput="changeRGB()"  onchange="changeRGB">
+            <div id="valGreen">100</div>
+        </div>
+        <div class="blue">
+            <p>blue</p>
+            <input id="slideBlue" type="range" min="0" max="255" value="200"  oninput="changeRGB()"  onchange="changeRGB">
+            <div id="valBlue">200</div>
+        </div>
+        <div class="rgb-a">
+            <p>a</p>
+            <input id="rgbA" type="range" min="0" max="10" value="5"  oninput="changeRGB()"  onchange="changeRGB">
+            <div id="valA">0.5</div>
+        </div>
+    </div>
+    <script src="./lib/w3color.js"></script>
+    <script>
+        changeRGB()
+        function changeRGB(){
+            console.log(1);
+            var col,r,g,b,a;
+            r = document.getElementById('slideRed').value;
+            g = document.getElementById('slideGreen').value;
+            b = document.getElementById('slideBlue').value;
+            a = document.getElementById('rgbA').value/10;
+            col = "rgba(" + r + "," + g + "," + b + "," + a +")";
+            document.getElementById("back-color").style.backgroundColor = col;
+            document.getElementById("back-color").innerHTML = col;
+            document.getElementById("valRed").innerHTML = r;
+            document.getElementById("valGreen").innerHTML = g;
+            document.getElementById("valBlue").innerHTML = b;
+            document.getElementById("valA").innerHTML = a;
+        }
+    </script>
+</body>
+</html>

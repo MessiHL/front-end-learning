@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+.example {
+  padding: 20px;
+  color: white;
+  font-size: 16px;
+}
+/* 超小型设备（600px及以下的手机） */
+@media only screen and (max-width: 600px) {
+  .example {background: red;}
+}
+
+/* 小型设备（平板电脑竖屏模式和大屏手机，600 像素及以上） */
+@media only screen and (min-width: 600px) {
+  .example {background: green;}
+}
+
+/* 中型设备（平板电脑横屏模式，768 像素及以上） */
+@media only screen and (min-width: 768px) {
+  .example {background: blue;}
+} 
+
+/* 大型设备（笔电、台式机，992 像素及以上） */
+@media only screen and (min-width: 992px) {
+  .example {background: orange;}
+} 
+
+/* 超大型设备（大屏笔电、台式机，1200 像素及以上） */
+@media only screen and (min-width: 1200px) {
+  .example {background: pink;}
+}
+</style>
+</head>
+<body>
+
+<h1>典型的媒体查询断点</h1>
+<div class="example">
+    <p>请调整浏览器窗口的大小，来查看该段落的背景色在不同屏幕尺寸下如何变化。</p>
+    <pre>
+        /* 超小型设备（600px及以下的手机） */
+        @media only screen and (max-width: 600px) {
+        .example {background: red;}
+        }
+
+        /* 小型设备（平板电脑竖屏模式和大屏手机，600 像素及以上） */
+        @media only screen and (min-width: 600px) {
+        .example {background: green;}
+        }
+
+        /* 中型设备（平板电脑横屏模式，768 像素及以上） */
+        @media only screen and (min-width: 768px) {
+        .example {background: blue;}
+        } 
+
+        /* 大型设备（笔电、台式机，992 像素及以上） */
+        @media only screen and (min-width: 992px) {
+        .example {background: orange;}
+        } 
+
+        /* 超大型设备（大屏笔电、台式机，1200 像素及以上） */
+        @media only screen and (min-width: 1200px) {
+        .example {background: pink;}
+        }
+    </pre>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event loop</title>
+    <!-- 
+        外部队列:
+            DOM 操作 (页面渲染)
+            用户交互 (鼠标、键盘)
+            网络请求 (Ajax 等)
+            History API 操作
+            定时器 (setTimeout 等)
+        内部队列：
+            Promise 的成功 (.then) 与失败 (.catch)
+            MutationObserver
+            Object.observe (已废弃)
+
+        处理模型：
+            1- 从外部队列中取出一个可执行任务，如果有则执行，没有下一步。
+            2- 挨个取出内部队列中的所有任务执行，执行完毕或没有则下一步。
+            3- 浏览器渲染
+
+
+
+        scripts 执行也是一个事件, JavaScript 的执行也是一个浏览器发起的外部事件。所以本质的执行顺序还是：
+            1 一次外部事件
+            2 所有内部事件
+            3 HTML 渲染
+            4 回到到 1
+
+        
+
+        浏览器端有外部队列一次事件循环只能执行一个的限制,
+        而在 Node.js 中则放开了这个限制，允许外部队列中所有任务都执行完再切换到内部队列。
+     -->
+</head>
+<body>
+    <pre id="main"></pre>
+</body>
+<script>
+    //1-JavaScript 执行完毕 innerText 首先加上 [end 41]
+    //2- 内部队列：Promise 的 then 全部任务执行完毕，往 innerText 上追加了很长一段字符串
+    //3- HTML 渲染：1 和 2 追加到 innerText 上的内容同时渲染
+    //4- 外部队列：挨个执行 setTimeout 中追加到 innerText 的内容
+    //5- HTML 渲染：将 4 中的内容渲染。
+    //6- 回到第 4 步走外部队列的流程（内部队列已清空）
+    const main = document.querySelector('#main');
+    const callback = (i, fn) => () => {
+        console.log(i)
+        main.innerText += fn(i);
+    };
+    let i = 1;
+    while(i++ < 20) {
+        setTimeout(callback(i, (i) => '\n' + i + '<'))
+    }
+
+    while(i++ < 40) {
+        Promise.resolve().then(callback(i, (i) => i +','))
+    }
+    console.log(i)
+    main.innerText += '[end ' + i + ' ]\n'
+</script>
+</html>

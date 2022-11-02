@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+    <script src="./../源码/3.6.0/index.js"></script>
+</head>
+<body>
+    <p>map test</p>
+    <script>
+        // 一维数组
+        var a = [1,2,3];
+        var a1 = $.map(a,function(item,i){
+            return item*item;
+        });
+        console.log(a1);
+
+        // object
+        var obj  = {name:'tom',age:'10'};
+        var obj1 = $.map(obj,function(item,i){
+            return item + "oo";
+        });
+        console.log(obj1);
+
+        // 二维数组 
+        var c = [[1,2],[3,4]];
+        var d = $.map(c,function(item,i){
+            return item*item;
+        });
+
+        console.log(d);
+    </script>
+</body>
+</html>

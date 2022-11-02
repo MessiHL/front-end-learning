@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css</title>
+    <style>
+        div {
+            display: inline-block;
+            height: 20px;
+            width: 30px;
+            background-color: darkblue;
+        }
+    </style>
+    <script src="./../jquery3.6.0.js"></script>
+  </head>
+  <body>
+    <p>css in p</p>
+    <div>click</div>
+    
+
+    
+  </body>
+  <script>
+    $(function(){
+       // 设置 p  的样式
+       $("p").css({
+           color: '#fff',
+           background:'#534'
+       });
+
+       // 点击，改变 div 的外观
+       $("div").click(function(){
+           $(this).css({
+               width: function(index,val){
+                    return parseFloat(val) * 1.05;
+               },
+               height:function(index,val){
+                   return parseFloat(val) * 1.06;
+               }
+           });
+       });
+
+    });
+   </script>
+</html>

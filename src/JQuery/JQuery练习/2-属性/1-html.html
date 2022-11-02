@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html</title>
+    <script src="./../jquery3.6.0.js"></script>
+  </head>
+  <body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <p>hi-1</p>
+    <p>hi-2</p>
+    <p>hi-3</p>
+    <script>
+     $(function(){
+         // html 设置所有 div 元素的内容
+         $("div").html("<span>hi ,html !</span>");
+
+         // 使用函数设置元素内容
+         $("p").html(function(idx,oldHtml){
+             return oldHtml + '我是第'+idx+'个p元素';
+         })
+     });
+    </script>
+
+    
+  </body>
+</html>

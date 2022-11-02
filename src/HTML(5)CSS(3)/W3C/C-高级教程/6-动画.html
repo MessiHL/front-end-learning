@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动画</title>
+    <style>
+        @keyframes example1 {
+            from{
+                background-color: darkgreen;
+            }
+            to{
+                background-color: darkorange;
+
+            }
+        }
+
+        @keyframes example2 {
+            0% {background-color: #000;}
+            20% {background-color: #222;}
+            40% {background-color: #444;}
+            60% {background-color: #666;}
+            80% {background-color: #888;}
+            100% {background-color: #aaa;}
+        }
+
+        @keyframes example3 {
+            0% {background-color: blue; left: 0;}
+            25% {background-color: red; left: 20%;}
+            50% {background-color: yellow; left: 40%;}
+            75% {background-color: green; left: 60%;}
+            100% {background-color: aquamarine; left: 80%;}
+        }
+
+        div{
+            width: 100px;
+            height: 100px;
+            margin: 20px 0;
+            position: relative;
+            background-color: red;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: 3;
+            animation-direction: alternate-reverse;
+            animation-fill-mode: forwards;
+        }
+
+        .demo1{
+            animation-name: example1;
+        }
+        .demo2{
+            animation-name: example2;
+        }
+        .demo3{
+            animation-name: example3;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo1"></div>
+    <div class="demo2"></div>
+    <div class="demo3"></div>
+</body>
+</html>

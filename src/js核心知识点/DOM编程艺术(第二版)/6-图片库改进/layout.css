@@ -1,0 +1,37 @@
+/*
+    px、em、rem区别介绍:
+         https://www.runoob.com/w3cnote/px-em-rem-different.html
+         https://www.runoob.com/cssref/css-units.html
+
+    float: left  clear: both ：
+    元素浮动之后，周围的元素会重新排列，为了避免这种情况，使用 clear 属性。
+*/
+
+body{
+    font-family: "Helvetica","Arial",serif;
+    color:#333;
+    background-color: #ccc;
+    margin: 1em 10%;
+  }
+  h1{
+    color: #333;
+    background-color: transparent;
+  }
+  a{
+    color: #c60;
+    background-color: transparent;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  ul{
+    padding: 0;
+  }
+  li{
+    float: left;
+    padding: 1em;
+    list-style: none;
+  }
+  img{
+    display: block;
+    clear: both; 
+  }

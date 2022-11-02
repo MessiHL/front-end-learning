@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>解构解析用途</h2>
+</body>
+<script>
+    // 1 变量交换
+    let x = 1,y = 2;
+    [x,y] = [y,x];
+    console.log(x,y);
+
+    // 2 函数返回多个值时
+    function arr(){
+        return [1,2,3]
+    }
+
+    let [a,b,c] = arr();
+    console.log(a,b,c);
+
+    function obj(){
+        return {
+            m:10,
+            n:20
+        }
+    }
+
+    let{m,n} = obj()
+    console.log(m,n);
+
+    // 提取JSON
+    let jsonData = {
+        id:1,
+        name:'tom',
+        data:[23,89]
+    };
+    let {id,name,data:num} = jsonData;
+    console.log(id,name,num);
+</script>
+</html>

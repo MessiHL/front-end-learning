@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Gallery</title>
+    <!-- 
+        1- return false; 可以阻止 a 标签默认事件，从而使得页面不跳转；
+        2- 坑： 如果showPic 函数报错，点击 a 标签，对应的图片会显示在新页面，如使用以下代码（变量 whichPicXXX 会报错）
+             function showPic(whichPic) {
+                var source = whichPicXXX.getAttribute("href");
+                var placeholder = document.getElementById("placeholder");
+                placeholder.setAttribute("src", source);
+            }
+     -->
+  </head>
+  <body>
+    <h1>Snapshots</h1>
+    <ul>
+      <li>
+        <a
+          href="images/b.jpg"
+          title="title1"
+          onclick="showPic(this);return false;"
+          >img21</a>
+      </li>
+      <li>
+        <a
+          href="images/c.jpg"
+          title="title2"
+          onclick="showPic(this); return false;"
+          >img2</a>
+      </li>
+      <li>
+        <a
+          href="images/d.jpg"
+          title="title3"
+          onclick="showPic(this); return false;"
+          >img3</a>
+      </li>
+    </ul>
+    <img id="placeholder" src="images/a.gif" alt="my image gallery" />
+    <script>
+      function showPic(whichPic) {
+        var source = whichPic.getAttribute("href");
+        var placeholder = document.getElementById("placeholder");
+        placeholder.setAttribute("src", source);
+      }
+    </script>
+  </body>
+</html>

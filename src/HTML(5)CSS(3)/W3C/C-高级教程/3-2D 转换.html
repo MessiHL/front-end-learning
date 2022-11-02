@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D 转换</title>
+    <style>
+        /*
+               函数	                            描述
+            ================================================================   
+            matrix(n,n,n,n,n,n)	    定义 2D 转换，使用六个值的矩阵。 参数如下：matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())
+            translate(x,y)	        定义 2D 转换，沿着 X 和 Y 轴移动元素。
+            translateX(n)	        定义 2D 转换，沿着 X 轴移动元素。
+            translateY(n)	        定义 2D 转换，沿着 Y 轴移动元素。
+            scale(x,y)	            定义 2D 缩放转换，改变元素的宽度和高度。
+            scaleX(n)	            定义 2D 缩放转换，改变元素的宽度。
+            scaleY(n)	            定义 2D 缩放转换，改变元素的高度。
+            rotate(angle)	        定义 2D 旋转，在参数中规定角度。
+            skew(x-angle,y-angle)	定义 2D 倾斜转换，沿着 X 和 Y 轴。
+            skewX(angle)	        定义 2D 倾斜转换，沿着 X 轴。
+            skewY(angle)	        定义 2D 倾斜转换，沿着 Y 轴。
+        */
+        div{
+            width: 100px;
+            height: 100px;
+            background-color: rgb(236, 195, 29);
+            margin: 100px 100px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div>正常</div>
+    <div style="transform: translateX(30px);">translateX</div>
+    <div style="transform: scale(2,2);">scale</div>
+    <div style="transform: scale(0.8,0.8);">scale</div>
+    <div style="transform: rotate(45deg);">rotate 45</div>
+    <div style="transform: skewX(30deg);">skewX</div>
+    <div style="transform: skewY(45deg);">skewY</div>
+    <div style="transform: skew(10deg,10deg);">skew</div>
+    <p>matrix() 方法把所有 2D 变换方法组合为一个。方法可接受六个参数，其中包括数学函数，这些参数使您可以旋转、缩放、移动（平移）和倾斜元素。</p>
+    <p>参数如下：matrix(scaleX(),skewY(),skewX(),scaleY(),translateX(),translateY())</p>
+    <div style="transform:matrix(2, -0.3, 2,3, 4,6)"></div>
+</body>
+</html>

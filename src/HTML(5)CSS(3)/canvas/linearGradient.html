@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinearGradient</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="400" height="200" style="border:1px solid #cdcdcd; padding: 10px;"></canvas>
+    <script>
+        var c = document.getElementById('myCanvas');
+        var cxt = c.getContext('2d');
+        var  gd = cxt.createLinearGradient(0,0,400,200);
+        gd.addColorStop(0,'#00f');
+        gd.addColorStop(1,'#f00');
+        cxt.fillStyle = gd;
+        cxt.fillRect(0,0,400,200);
+    </script>
+</body>
+</html>

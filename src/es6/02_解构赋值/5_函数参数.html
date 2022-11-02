@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>函数参数解构赋值</h2>
+</body>
+<script>
+    function add([x,y]){
+        console.log(x+y);
+        return x + y
+    }
+
+    add([1,2])
+    add([1,2,3])
+
+
+    let r = [[1,2],[3,4]].map(([a,b])=>a+b);
+    console.log(r);
+
+    // 默认值。函数move的参数是一个对象，通过对这个对象进行解构，得到变量x和y的值。
+    // 如果解构失败，x和y等于默认值
+    function move({x=0,y=0} = {}){
+        console.log(`moved: x:${x}; y:${y}`);
+        return [x,y];
+    }
+    move({x:1,y:2})
+    move({x:1})
+    move({})
+    move()
+    move(undefined)
+    console.log('------------- move2 ----------------');
+
+    // 不同的写法，不同的结果
+    function move2({x,y}={x:0,y:0}){
+        console.log(`moved: x:${x}; y:${y}`);
+        return [x,y];
+    }
+    move2({x: 3, y: 8}); // [3, 8]
+    move2({x: 3}); // [3, undefined]
+    move2({}); // [undefined, undefined]
+    move2(); // [0, 0]
+    move2(null); // Uncaught TypeError
+
+</script>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文本对齐</title>
+    <style>
+        p{
+            margin: 40px;
+        }
+        .demo1{
+             /*
+                top、middle、bottom
+                注意，样式是设置在img元素上，而非 p 元素上
+            */
+            vertical-align: top;
+        }
+        .demo2{
+            vertical-align: middle;
+        }
+        .demo3{
+            vertical-align: bottom;
+        }
+    </style>
+</head>
+<body>
+    <h3>注意，vertical-align样式是设置在img元素上，而非 p 元素上</h3>
+    <p>文本居上对齐<img class="demo1" src="./../../images/w3logo-3.png">vertical-align:top;</p>
+    <p>文本居中对齐<img class="demo2" src="./../../images/w3logo-3.png">vertical-align:middle;</p>
+    <p>文本居下对齐<img class="demo3" src="./../../images/w3logo-3.png">verticla-align:bottom;</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var name = 'tom';
+        var obj = {name:'messi'};
+        function sayName(){
+            // 注意this的变化
+            console.log(this); 
+            return this.name;
+        }
+        console.log('改变函数的作用域:');
+        console.log(sayName.call(this));
+        console.log(sayName.call(obj));
+        console.log(sayName.apply(this));
+        console.log(sayName.apply(obj));
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jquery 核心</title>
+    <script src="./../jquery3.6.0.js"></script>
+  </head>
+  <body>
+    <script>
+      // 1 背景色
+      $(document.body).css("background", "#a74ed4");
+
+      //2  动态创建元素
+      $("<h1>Jquery 核心</h1>").appendTo("body");
+
+      //2 复杂元素创建。注意此出是 <div> , 而不是 div
+      $("<div>", {
+        class: "test",
+        text: "click me !",
+        click: function () {
+          $(this).toggleClass("test");
+        },
+      }).appendTo("body");
+
+    </script>
+  </body>
+</html>
