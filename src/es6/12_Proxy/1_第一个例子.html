@@ -9,13 +9,13 @@
 <body>
   <script>
     var obj = new Proxy({},{
-      get:function(target,propkey,receiver){
-        console.log(`getting ${propkey}`);
-        return Reflect.get(target,propkey,receiver);
+      get:function(target,propKey,receiver){
+        console.log(`getting ${propKey}`);
+        return Reflect.get(target,propKey,receiver);
       },
-      set:function(target,propkey,value,receiver){
-        console.log(`setting ${propkey}`);
-        return Reflect.set(target,propkey,value,receiver);
+      set:function(target,propKey,value,receiver){
+        console.log(`setting ${propKey}`);
+        return Reflect.set(target,propKey,value,receiver);
       },
     });
 
